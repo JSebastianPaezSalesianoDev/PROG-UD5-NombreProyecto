@@ -1,17 +1,19 @@
 package net.hiperdinosupermarkets.clientes;
 
+import java.util.Stack;
+
+import net.hiperdinosupermarkets.generador.GeneradorNombres;
+import net.hiperdinosupermarkets.generador.GeneradorProductos;
+
 public class Cliente {
     
     private String nombre;
-    private String dni;
-    private int numCola;    
     private int numProductos;
+    Stack<String> cestaCompra = new Stack<>();
 
-    public Cliente( String nombre, String dni, int numCola, int numProductos){
-        this.nombre = nombre;
-        this.dni = dni;
-        this.numCola = numCola;
-        this.numProductos = numProductos;
+    public Cliente(){
+        this.nombre = GeneradorNombres.obtenerNombreAleatorio();
+        this.numProductos = cestaCompra.size();
     }
 
     public String getNombre(){
@@ -22,22 +24,6 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public String getDni() {
-        return dni;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-
-    public int getNumCola() {
-        return numCola;
-    }
-
-    public void setNumCola(int numCola) {
-        this.numCola = numCola;
-    }
-
     public int getNumProductos() {
         return this.numProductos;
     }
@@ -46,14 +32,24 @@ public class Cliente {
         this.numProductos = numProductos;
     }
 
+    public void añadirProductoCesta(){
+        String nuevoProducto = GeneradorProductos.obtenerProductoAleatorio();
+        cestaCompra.push(nuevoProducto);
+    }
 
     @Override
     public String toString() {
         String mensaje;
 
         mensaje = "* Nombre: < " + this.nombre + " >\n";
-        mensaje += "*Total de Productos: < " + this.numProductos + " >\n";
-        return "Cliente [nombre=" + nombre + ", dni=" + dni + ", numCola=" + numCola + "]";
+        mensaje += "*Total de Productos: < " + cestaCompra.size() + " >\n";
+        mensaje += "Lista de articulos en la lista: \n";
+
+        for (String producto : cestaCompra) {
+            mensaje += "- " + producto + "\n";
+        }
+
+        return mensaje;
     }
 
 

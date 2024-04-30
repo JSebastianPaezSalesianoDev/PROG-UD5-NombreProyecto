@@ -27,7 +27,7 @@ public class GeneradorNombres {
 
     };
 
-    public static String obtenerProductoAleatorio() {
+    public static String obtenerNombreAleatorio() {
         Random rand = new Random();
         int indiceAleatorio = rand.nextInt(nombres.length);
         return nombres[indiceAleatorio];
