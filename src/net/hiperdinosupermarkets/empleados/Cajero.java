@@ -2,13 +2,13 @@ package net.hiperdinosupermarkets.empleados;
 
 import java.util.LinkedList;
 import java.util.Queue;
-
 import net.hiperdinosupermarkets.clientes.Cliente;
 
 public class Cajero {
     
     private int numCaja;
     private int numClientes;
+    private boolean estadoCaja;
     private Queue<Cliente> colaClientes = new LinkedList<>();
     
     public int getNumCaja() {
@@ -24,7 +24,12 @@ public class Cajero {
         this.numClientes = numClientes;
     }
 
-
+    public boolean isEstadoCaja() {
+        return estadoCaja;
+    }
+    public void setEstadoCaja(boolean estadoCaja) {
+        this.estadoCaja = estadoCaja;
+    }
     @Override
     public String toString() {
         
