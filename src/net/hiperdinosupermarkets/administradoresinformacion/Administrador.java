@@ -5,6 +5,7 @@ import java.util.Queue;
 import java.util.Random;
 
 import net.hiperdinosupermarkets.clientes.Cliente;
+import net.hiperdinosupermarkets.empleados.Cajero;
 
 public class Administrador {
 
@@ -46,4 +47,18 @@ public class Administrador {
 
         return mensaje;
     }
+
+    public boolean cerrarSuper(Cajero cajero) {
+
+        if (colaClientes.size() == 0) {
+            cajero.setEstadoCaja(false);
+            return cajero.isEstadoCaja();
+            
+        } else {
+            cajero.setEstadoCaja(true);
+            System.out.println("Priemro debe atender a todos pa cerrar");
+        }
+        return cajero.isEstadoCaja();
+    }
+
 }

@@ -7,11 +7,12 @@ import net.hiperdinosupermarkets.utilidades.Menu;
 public class App {
     public static void main(String[] args) {
 
+        boolean seguir = true;
         Scanner scanner = new Scanner(System.in);
         Administrador admin = new Administrador();
         Cajero cajero = new Cajero(admin);
 
-        while (true) {
+        while (seguir) {
             System.out.println("\n" + Menu.menu());
 
             String opcionMenuString = scanner.nextLine();
@@ -44,11 +45,16 @@ public class App {
                 case 4:
                     System.out.println(cajero.toString());
                     break;
+                case 5:
+                    admin.cerrarSuper(cajero);
+                    seguir = cajero.isEstadoCaja();
+                    break;
+
                 default:
                     System.out.println("Opción inválida");
                     break;
             }
         }
-        
+
     }
 }
