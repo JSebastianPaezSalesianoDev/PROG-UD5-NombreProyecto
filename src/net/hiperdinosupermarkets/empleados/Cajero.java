@@ -58,6 +58,11 @@ public class Cajero {
         System.out.println(cliente.toString());
     }
 
+    public void atenderCliente(){
+
+        System.out.println(colaClientes.remove());
+    }
+
     @Override
     public String toString() {
 
