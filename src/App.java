@@ -1,5 +1,6 @@
 import net.hiperdinosupermarkets.clientes.Cliente;
 import net.hiperdinosupermarkets.generador.GeneradorProductos;
+import net.hiperdinosupermarkets.utilidades.Menu;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -10,5 +11,7 @@ public class App {
         cliente.añadirProductoCesta();
         cliente.añadirProductoCesta();
         System.out.println(cliente.toString());
+
+        System.out.println(Menu.menu());
     }
 }
