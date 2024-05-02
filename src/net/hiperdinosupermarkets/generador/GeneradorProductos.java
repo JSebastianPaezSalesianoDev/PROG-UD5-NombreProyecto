@@ -4,18 +4,19 @@ import java.util.Random;
 
 public class GeneradorProductos {
     private static String[] productos = {
-        "ATUN",
-        "MERLUSA",
-        "BANANO",
-        "MANZANA",
-        "DESODORANTE",
-        "LECHUGA",
-        "SALMON",
-        "CARNE RES",
-        "POLLO",
-        "COCA-CULO",
-        "CARNE DE PANDA",
-        "CHOCOLATINA"
+
+            "ATUN",
+            "MERLUSA",
+            "BANANO",
+            "MANZANA",
+            "DESODORANTE",
+            "LECHUGA",
+            "SALMON",
+            "CARNE RES",
+            "POLLO",
+            "COCA-CULO",
+            "CARNE DE PANDA",
+            "CHOCOLATINA"
     };
 
     public static String obtenerProductoAleatorio() {

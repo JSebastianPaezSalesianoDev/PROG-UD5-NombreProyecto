@@ -6,21 +6,21 @@ import net.hiperdinosupermarkets.generador.GeneradorNombres;
 import net.hiperdinosupermarkets.generador.GeneradorProductos;
 
 public class Cliente {
-    
+
     private String nombre;
     private int numProductos;
     Stack<String> cestaCompra = new Stack<>();
 
-    public Cliente(){
+    public Cliente() {
         this.nombre = GeneradorNombres.obtenerNombreAleatorio();
         this.numProductos = cestaCompra.size();
     }
 
-    public String getNombre(){
+    public String getNombre() {
         return this.nombre;
     }
 
-    public void setNombre(String nombre){
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
@@ -32,7 +32,7 @@ public class Cliente {
         this.numProductos = numProductos;
     }
 
-    public void añadirProductoCesta(){
+    public void añadirProductoCesta() {
         String nuevoProducto = GeneradorProductos.obtenerProductoAleatorio();
         cestaCompra.push(nuevoProducto);
     }
@@ -52,6 +52,4 @@ public class Cliente {
         return mensaje;
     }
 
-
-    
 }

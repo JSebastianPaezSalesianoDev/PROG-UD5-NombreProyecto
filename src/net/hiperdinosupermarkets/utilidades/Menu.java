@@ -1,8 +1,8 @@
 package net.hiperdinosupermarkets.utilidades;
 
 public class Menu {
-    
-    public static String menu(){
+
+    public static String menu() {
 
         String menu = "Eliga la opcion que quiere.\n**************************************************\n";
         menu += "\n\t1. Abrir caja\n\t2. Añadir nuevo cliente a la cola";
