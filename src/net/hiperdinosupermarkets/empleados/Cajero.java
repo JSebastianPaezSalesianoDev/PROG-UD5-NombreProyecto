@@ -49,6 +49,7 @@ public class Cajero {
 
         }
         colaClientes.add(cliente);
+        System.out.println(cliente.toString());
     }
 
     @Override
