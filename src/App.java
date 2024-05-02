@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-import net.hiperdinosupermarkets.clientes.Cliente;
+import net.hiperdinosupermarkets.administradoresinformacion.Administrador;
 import net.hiperdinosupermarkets.empleados.Cajero;
 import net.hiperdinosupermarkets.utilidades.Menu;
 
@@ -8,10 +8,11 @@ public class App {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        Cajero cajero = new Cajero();
+        Administrador admin = new Administrador();
+        Cajero cajero = new Cajero(admin);
 
         while (true) {
-            System.out.println("\n" +Menu.menu());
+            System.out.println("\n" + Menu.menu());
 
             String opcionMenuString = scanner.nextLine();
             int opcionMenu = Integer.parseInt(opcionMenuString);
@@ -30,15 +31,18 @@ public class App {
                     } else {
 
                         System.out.println("Cliente añadido:\n");
-                        cajero.añadirClienteCola();
+                        admin.añadirClienteCola();
                     }
                     break;
                 case 3:
-                    if (cajero.obtenerNumeroClientes() == 0) {
+                    if (admin.obtenerNumeroClientes() == 0) {
                         System.out.println("Ya no hay clientes que atender");
-                    } else if (cajero.obtenerNumeroClientes() > 0){
-                        cajero.atenderCliente();
+                    } else if (admin.obtenerNumeroClientes() > 0) {
+                        admin.atenderCliente();
                     }
+                    break;
+                case 4:
+                    System.out.println(cajero.toString());
                     break;
                 default:
                     System.out.println("Opción inválida");

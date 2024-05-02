@@ -1,18 +1,18 @@
 package net.hiperdinosupermarkets.empleados;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Random;
-
-import net.hiperdinosupermarkets.clientes.Cliente;
+import net.hiperdinosupermarkets.administradoresinformacion.Administrador;
 
 public class Cajero {
 
     private int numCaja = 12;
     private boolean estadoCaja = false;
-    private Queue<Cliente> colaClientes = new LinkedList<>();
+    Administrador admin = new Administrador();
 
     public Cajero(){
+    }
+    
+    public Cajero(Administrador admin) {
+        this.admin = admin;
     }
 
     public int getNumCaja() {
@@ -31,41 +31,13 @@ public class Cajero {
         this.estadoCaja = estadoCaja;
     }
 
-    public void añadirClienteCola() {
-
-        Cliente cliente = new Cliente();
-
-        Random rand = new Random();
-        int numeroAleatorio = rand.nextInt(12);
-
-        for (int i = 1; i < numeroAleatorio; i++) {
-            cliente.añadirProductoCesta();
-
-        }
-        colaClientes.add(cliente);
-        System.out.println(cliente.toString());
-    }
-
-    public void atenderCliente(){
-
-        System.out.println(colaClientes.remove());
-    }
-
-    public int obtenerNumeroClientes(){
-        int numClientes = colaClientes.size();
-        return numClientes;
-    }
     @Override
     public String toString() {
-
-        String mensaje = "*Numero de caja: " + this.numCaja + " > :";
-        mensaje += "total clientes: < " + colaClientes.size() + " >";
-        mensaje += "Clientes en fila: ";
-        for (Cliente cliente : colaClientes) {
-            mensaje += "- " + cliente + "\n";
-
-        }
+        String mensaje = "* Numero de caja: " + this.numCaja + " > :";
+        mensaje += " Total clientes: < " + admin.obtenerNumeroClientes() + " >";
+        mensaje += " Clientes en fila: \n" + admin.mostrarClientesFila();
         return mensaje;
     }
+    
 
 }
