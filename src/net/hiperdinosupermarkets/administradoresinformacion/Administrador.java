@@ -15,7 +15,7 @@ public class Administrador {
         Cliente cliente = new Cliente();
 
         Random rand = new Random();
-        int numeroAleatorio = rand.nextInt(12)+1;
+        int numeroAleatorio = rand.nextInt(12) + 1;
 
         for (int i = 1; i < numeroAleatorio; i++) {
             cliente.añadirProductoCesta();
@@ -35,9 +35,9 @@ public class Administrador {
         return numClientes;
     }
 
-    public String mostrarClientesFila(){
+    public String mostrarClientesFila() {
 
-        String mensaje ="";
+        String mensaje = "";
 
         for (Cliente cliente : colaClientes) {
             mensaje += "- " + cliente + "\n";
