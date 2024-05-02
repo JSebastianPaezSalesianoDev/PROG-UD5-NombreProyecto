@@ -34,10 +34,10 @@ public class App {
                     }
                     break;
                 case 3:
-                    if (cajero.getNumClientes() == 0) {
+                    if (cajero.obtenerNumeroClientes() == 0) {
                         System.out.println("Ya no hay clientes que atender");
-                    } else if (cajero.getNumClientes() > 0){
-                        
+                    } else if (cajero.obtenerNumeroClientes() > 0){
+                        cajero.atenderCliente();
                     }
                     break;
                 default:

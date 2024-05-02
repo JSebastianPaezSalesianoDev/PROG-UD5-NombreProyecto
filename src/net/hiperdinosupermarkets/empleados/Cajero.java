@@ -8,15 +8,11 @@ import net.hiperdinosupermarkets.clientes.Cliente;
 
 public class Cajero {
 
-    private int numCaja;
-    private int numClientes;
+    private int numCaja = 12;
     private boolean estadoCaja = false;
     private Queue<Cliente> colaClientes = new LinkedList<>();
 
     public Cajero(){
-
-        this.numClientes = colaClientes.size();
-        this.numCaja = colaClientes.size();
     }
 
     public int getNumCaja() {
@@ -25,14 +21,6 @@ public class Cajero {
 
     public void setNumCaja(int numCaja) {
         this.numCaja = numCaja;
-    }
-
-    public int getNumClientes() {
-        return numClientes;
-    }
-
-    public void setNumClientes(int numClientes) {
-        this.numClientes = numClientes;
     }
 
     public boolean isEstadoCaja() {
@@ -63,6 +51,10 @@ public class Cajero {
         System.out.println(colaClientes.remove());
     }
 
+    public int obtenerNumeroClientes(){
+        int numClientes = colaClientes.size();
+        return numClientes;
+    }
     @Override
     public String toString() {
 
