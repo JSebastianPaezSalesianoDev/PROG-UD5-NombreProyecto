@@ -13,6 +13,12 @@ public class Cajero {
     private boolean estadoCaja = false;
     private Queue<Cliente> colaClientes = new LinkedList<>();
 
+    public Cajero(){
+
+        this.numClientes = colaClientes.size();
+        this.numCaja = colaClientes.size();
+    }
+
     public int getNumCaja() {
         return numCaja;
     }
@@ -44,7 +50,7 @@ public class Cajero {
         Random rand = new Random();
         int numeroAleatorio = rand.nextInt(12);
 
-        for (int i = 0; i < numeroAleatorio; i++) {
+        for (int i = 1; i < numeroAleatorio; i++) {
             cliente.añadirProductoCesta();
 
         }

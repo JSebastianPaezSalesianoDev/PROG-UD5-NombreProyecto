@@ -11,7 +11,7 @@ public class App {
         Cajero cajero = new Cajero();
 
         while (true) {
-            System.out.println(Menu.menu());
+            System.out.println("\n" +Menu.menu());
 
             String opcionMenuString = scanner.nextLine();
             int opcionMenu = Integer.parseInt(opcionMenuString);
@@ -20,15 +20,26 @@ public class App {
                 case 1:
                     if (!cajero.isEstadoCaja()) {
                         cajero.setEstadoCaja(true);
-                        System.out.println("Caja abierta");
+                        System.out.println("\n\n\t****Caja abierta****");
                     }
                     break;
                 case 2:
-                    cajero.añadirClienteCola();
+
+                    if (cajero.isEstadoCaja() == false) {
+                        System.out.println("\n\n\t****La caja esta cerrada****");
+                    } else {
+
+                        System.out.println("Cliente añadido:\n");
+                        cajero.añadirClienteCola();
+                    }
                     break;
                 case 3:
-                    
-
+                    if (cajero.getNumClientes() == 0) {
+                        System.out.println("Ya no hay clientes que atender");
+                    } else if (cajero.getNumClientes() > 0){
+                        
+                    }
+                    break;
                 default:
                     System.out.println("Opción inválida");
                     break;
