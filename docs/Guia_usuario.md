@@ -2,7 +2,7 @@
 
 Para entender nuestro menu, primero debemos saber como funciona el sistema de colas (filas), donde la primera entidad en llegar/ingresar sera tambien la primera en ser afectada por un cambio externo. 
 
-Mientras que sustancialemten las cestas de los clientes son pilas, osea. se amontonan los productos, siendo el primero en ingresar a la cesta sera el ultimo en ser afectado por un cambio externo. No podremos observar el comportamiento de este ni afectarlo mediante la interfaz, debido a que se generan de manera automatica.
+Mientras que sustancialmente las cestas de los clientes son pilas, osea. se amontonan los productos, siendo el primero en ingresar a la cesta el ultimo en ser afectado por un cambio externo. No podremos observar el comportamiento de este ni afectarlo mediante la interfaz, debido a que se generan de manera automatica.
 
 ## Opciones del Menú
 
