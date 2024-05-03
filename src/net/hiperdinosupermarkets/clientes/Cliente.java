@@ -9,7 +9,7 @@ public class Cliente {
 
     private String nombre;
     private int numProductos;
-    Stack<String> cestaCompra = new Stack<>();
+    private Stack<String> cestaCompra = new Stack<>();
 
     public Cliente() {
         this.nombre = GeneradorNombres.obtenerNombreAleatorio();
@@ -42,7 +42,7 @@ public class Cliente {
         String mensaje;
 
         mensaje = "* Nombre: < " + this.nombre + " >\n";
-        mensaje += "*Total de Productos: < " + cestaCompra.size() + " >\n";
+        mensaje += "*Total de Productos: < " + this.cestaCompra.size() + " >\n";
         mensaje += "Lista de articulos en la lista: \n";
 
         for (String producto : cestaCompra) {

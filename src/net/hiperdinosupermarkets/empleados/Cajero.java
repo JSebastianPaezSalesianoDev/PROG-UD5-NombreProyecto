@@ -4,11 +4,15 @@ import net.hiperdinosupermarkets.administradoresinformacion.Administrador;
 
 public class Cajero {
 
-    private int numCaja = 12;
-    private boolean estadoCaja = false;
-    Administrador admin = new Administrador();
+    private int numCaja;
+    private boolean estadoCaja;
+    private Administrador admin;
 
     public Cajero(){
+
+        this.numCaja = 12;
+        this.estadoCaja = false;
+        this.admin = new Administrador();
     }
     
     public Cajero(Administrador admin) {
