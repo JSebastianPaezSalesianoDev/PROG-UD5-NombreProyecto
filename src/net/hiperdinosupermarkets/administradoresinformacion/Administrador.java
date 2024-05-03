@@ -16,9 +16,9 @@ public class Administrador {
         Cliente cliente = new Cliente();
 
         Random rand = new Random();
-        int numeroAleatorio = rand.nextInt(12) + 1;
+        int numeroAleatorio = (rand.nextInt(1,12));
 
-        for (int i = 1; i < numeroAleatorio; i++) {
+        for (int i = 0; i < numeroAleatorio; i++) {
             cliente.añadirProductoCesta();
 
         }
@@ -52,6 +52,7 @@ public class Administrador {
 
         if (colaClientes.size() == 0) {
             cajero.setEstadoCaja(false);
+            System.out.println("Cerrando el super");
             return cajero.isEstadoCaja();
             
         } else {
